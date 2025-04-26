@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./database.db:/app/database.db
+    command: sh -c "npm run init-db && npm start"
